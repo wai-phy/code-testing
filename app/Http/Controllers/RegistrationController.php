@@ -30,7 +30,12 @@ class RegistrationController extends Controller
     // Register List Page
     public function registerList(){
         $studentData = Registration::when(request('key'),function($query){
-                        $query->where('registrations.name','like','%'.request('key').'%');
+                    $query->orWhere('name','like','%'.request('key').'%')
+                    ->orWhere('name','like','%'.request('key').'%')
+                    ->orWhere('father_name','like','%'.request('key').'%')
+                    ->orWhere('grade','like','%'.request('key').'%')
+                    ->orWhere('phone','like','%'.request('key').'%')
+                    ->orWhere('address','like','%'.request('key').'%');
                         })
                         ->orderBy('created_at','desc')->paginate(3);
         return view('registerList',compact('studentData'));

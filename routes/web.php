@@ -10,7 +10,7 @@ use App\Http\Controllers\RegistrationController;
 //student registration
 Route::get('/',[RegistrationController::class,'registerPage'])->name('register#Page');
 Route::post('register',[RegistrationController::class,'register'])->name('register#success');
-Route::get('success',[RegistrationController::class,'success'])->name('success#page');
+// Route::get('success',[RegistrationController::class,'success'])->name('success#page');
 Route::get('registerList',[RegistrationController::class,'registerList'])->name('register#List');
 Route::get('delete/{id}',[RegistrationController::class,'deleteData'])->name('register#Delete');
 Route::get('studentDetail/{id}',[RegistrationController::class,'studentDetail'])->name('student#Detail');

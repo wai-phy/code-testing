@@ -22,10 +22,10 @@ class RegistrationController extends Controller
 
     }
 
-    //Success Page
-    public function success(){
-        return view('success');
-    }
+    // //Success Page
+    // public function success(){
+    //     return view('success');
+    // }
 
     // Register List Page
     public function registerList(){
